@@ -11,7 +11,9 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('tb_pasiens'),function(Blueprint $table)
+        Schema::create('tb_pasiens'),function(Blueprint $table) {
+            
+        }
     }
 
     /**
