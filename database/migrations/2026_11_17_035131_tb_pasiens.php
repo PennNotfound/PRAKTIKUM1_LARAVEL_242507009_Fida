@@ -11,9 +11,16 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('tb_pasiens'),function(Blueprint $table) {
-            
-        }
+        Schema::create('tb_pasiens', function (Blueprint $table) {
+            $table->integer('id_pasien')->autoIncrement()->primary();
+            $table->string('nama_lengkap',100);
+            $table->string('email',100);
+            $table->string('no_telpon',20);
+            $table->text('alamat');
+            $table->string('password',20);
+            $table->enum('status_pasien',['aktif','nonaktif']);
+            $table->timestamps();
+        });
     }
 
     /**
@@ -21,6 +28,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        //
+        Schema::dropIfExists('tb_pasiens');
     }
 };

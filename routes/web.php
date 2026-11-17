@@ -8,5 +8,5 @@ Route::get('/', function () {
 });
 
 Route::get('/login',[ControllerPasien::class,'tampil']);
-Route::post('/login',[ControllerPasien::class]);
+Route::post('/login',[ControllerPasien::class,'login']);
 Route::get('/register',[ControllerPasien::class,'daftar']);
